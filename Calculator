@@ -1,0 +1,53 @@
+func ask(_ prompt: String) -> String {
+  print(prompt, terminator:  "?")
+  return readLine()! 
+}
+
+let question2 = ask("Do you allready have cement sand or poles, Yes or No")
+if question2 == "yes" || question2 == "Yes" {
+  let amountOfCement = ask("How many bags of cement do you have")
+  let amountOfSand = ask("How many bags of sand do you have")
+  let amountOfPoles = ask("How many poles do you have")
+  let amountOfItems = ask("How many cement items are you trying to make")
+  let cement2 = Int(amountOfCement) ?? 0
+  let sand2 = Int(amountOfSand) ?? 0
+  let poles2 = Int(amountOfPoles) ?? 0
+  let items2 = Int(amountOfItems) ?? 0
+  let amountNeed = items2 * 2
+  let needC = amountNeed - cement2
+  let needS = amountNeed - sand2
+  let needP = amountNeed - poles2
+  let payment = needC * 2000
+  let payment2 = needS * 1500
+  let payment3 = needP * 800
+  let finalPayment = payment + payment2 + payment3
+  print("To make \(items2) items of cement you need, \(needC) bags of cement, \(needS) bags of sand, \(needP) poles which will cost: \(finalPayment) dollars.")
+} else {
+let question = ask("Walls or Money")
+if question == "walls" || question == "Walls" || question == " Walls" || question == " walls"  {
+  let response = ask("How many walls do you want to make")
+  let response2 = Int(response) ?? 0 
+  let cement = response2 * 2
+  let sand = response2 * 2
+  let poles = response2 * 2
+  let money = response2 * 8600
+  print("To make \(response2) walls you need \(cement) bags of cement, \(sand) bags of sand,\(poles) poles and \(money) dollars.")
+} else {
+  let money = ask("Money")
+  let money2 = Int(money) ?? 0
+  let amount = money2 / 8600
+  print(amount)
+  let totalCement = amount * 2
+  let totalSand = amount * 2
+  let totalPoles = amount * 2
+
+print("You need \(totalCement) bags of cement, \(totalSand) bags of sand and \(totalPoles) poles at a price of 8600 per wall.")
+  }
+}
+
+  
+
+
+
+
+
